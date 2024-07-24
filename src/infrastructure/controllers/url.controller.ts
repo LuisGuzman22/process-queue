@@ -8,8 +8,8 @@ import {
   Put,
 } from '@nestjs/common';
 import { CreateUrlDto, UpdateUrlDto } from 'src/application/dtos/url.dto';
-import { Url } from 'src/core/domain/Url';
-import { UrlService } from 'src/core/services/url.service';
+import { Url } from '../../core/domain/url';
+import { UrlService } from '../../core/services/url.service';
 
 @Controller('url')
 export class UrlController {
@@ -23,6 +23,7 @@ export class UrlController {
       createUserDto.originalUrl,
       createUserDto.action,
     );
+    console.log('user', user);
     return this.urlService.create(user);
   }
 
